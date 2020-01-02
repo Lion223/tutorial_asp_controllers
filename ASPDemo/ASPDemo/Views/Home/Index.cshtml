@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Game Store";
+}
+@model IEnumerable<ASPDemo.Models.Game>
+
+<div class="jumbotron">
+    <h1>Game Store</h1>
+</div>
+
+<div class="row">
+    <div>
+        <table>
+            <tr>
+                <td><p>Name</p></td>
+                <td><p>Description</p></td>
+                <td><p>Price</p></td>
+                <td></td>
+            </tr>
+            @foreach (ASPDemo.Models.Game g in Model)
+            {
+                <tr>
+                    <td><p>@g.Name</p></td>
+                    <td><p>@g.Description</p></td>
+                    <td><p>@g.Price</p></td>
+                    <td><p><a href="/Home/Buy/@g.Id">Buy</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

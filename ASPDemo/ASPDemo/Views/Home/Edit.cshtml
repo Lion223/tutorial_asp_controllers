@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+@model ASPDemo.Models.Game
+
+<h2>Edit Game #@Model.Id</h2>
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+<fieldset>
+    @Html.HiddenFor(m => m.Id)
+    <p>
+        @Html.LabelFor(m => m.Name, "Name")
+        <br />
+        @Html.EditorFor(m => m.Name)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Genre, "Genre")
+        <br />
+        @Html.EditorFor(m => m.Genre)
+
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Description, "Description")
+        <br />
+        @Html.EditorFor(m => m.Description)
+
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Price, "Price")
+        <br />
+        @Html.EditorFor(m => m.Price)
+    </p>
+    <p><input type="submit" value="Send" /></p>
+</fieldset>
+}
+
